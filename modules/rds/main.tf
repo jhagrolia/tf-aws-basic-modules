@@ -64,4 +64,7 @@ resource "aws_db_instance" "rds_db" {
   allow_major_version_upgrade = var.upgrade.allow_major
 
   deletion_protection = var.rds_del_protection
+
+  skip_final_snapshot = var.final_snapshot.skip
+  final_snapshot_identifier = var.final_snapshot.identifier
 }

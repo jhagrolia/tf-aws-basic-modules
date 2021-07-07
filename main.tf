@@ -22,7 +22,6 @@ module "rds_module" {
   engine = var.rds_engine
 }
 
-
 // Importing Elasticache Module
 module "elasticache_module" {
   source = "./modules/elasticache/"

@@ -46,7 +46,7 @@ variable "db_cred" {
         pass = "masterdb_userpass"
     }
 }
-yes
+
 variable "db_inst_class" {
     type = string
     description = "Instance Class of RDS Database"
@@ -99,4 +99,16 @@ variable "subnets" {
     type = list(string)
     description = "List of subnets for RDS Subnet Group"
     default = null
+}
+
+variable "final_snapshot" {
+    type = object({
+        skip = bool
+        identifier = string
+    })
+    description = "RDS Database Credentials"
+    default = {
+        skip = false
+        identifier = "final-snapshot-mysql-db"
+    }
 }

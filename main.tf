@@ -13,3 +13,11 @@ module "vpc_module" {
   source = "./modules/vpc/"
   vpc_name = var.vpc_name
 }
+
+// Importing RDS Module
+module "rds_module" {
+  source = "./modules/rds/"
+  rds_allow_cidr = var.rds_allow_cidr
+  db_cred = var.rds_db_cred
+  engine = var.rds_engine
+}

@@ -21,3 +21,11 @@ module "rds_module" {
   db_cred = var.rds_db_cred
   engine = var.rds_engine
 }
+
+
+// Importing Elasticache Module
+module "elasticache_module" {
+  source = "./modules/elasticache/"
+  port = var.cache_port
+  engine = var.cache_engine
+}
